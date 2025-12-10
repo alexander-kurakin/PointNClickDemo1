@@ -11,6 +11,14 @@ public class NavMeshUtils
         return false;
     }
 
+    public static bool TryGetPath(NavMeshAgent agent, Vector3 targetPosition, NavMeshPath pathToTarget)
+    {
+        if (agent.CalculatePath(targetPosition, pathToTarget) && pathToTarget.status != NavMeshPathStatus.PathInvalid)
+            return true;
+
+        return false;
+    }
+
     public static float GetPathLength(NavMeshPath path)
     {
         float pathLength = 0f;

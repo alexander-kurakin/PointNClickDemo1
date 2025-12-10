@@ -30,8 +30,4 @@ public class CompositeController : Controller
         foreach (Controller controller in _controllers)
             controller.Update(deltaTime);
     }
-
-    public override void SetTarget(Vector3 targetToSet)
-    {
-    }
 }

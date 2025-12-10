@@ -15,8 +15,6 @@ public abstract class Controller
         UpdateLogic(deltaTime);
     }
 
-    public abstract void SetTarget(Vector3 targetToSet);
-
     protected abstract void UpdateLogic(float deltaTime);
 
 }

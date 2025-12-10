@@ -4,12 +4,21 @@ using UnityEngine.AI;
 public class InputExample : MonoBehaviour
 {
     [SerializeField] private LayerMask _groundLayerMask;
-    [SerializeField] private AgentCharacterController _agentCharacterController;
+    [SerializeField] private NavMeshCharacter _character;
+    private NavMeshController _agentController;
 
     private Vector3 _mouseHitPosition = Vector3.zero;
 
+    private void Awake()
+    {
+        _agentController = new NavMeshController(_character, _character.transform.position);
+        _agentController.Enable();
+    }
+
     private void Update()
     {
+        _agentController.Update(Time.deltaTime);
+
         Ray mousePointRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(mousePointRay, out RaycastHit hitInfo, 100f, _groundLayerMask))
@@ -17,8 +26,8 @@ public class InputExample : MonoBehaviour
             _mouseHitPosition = hitInfo.point;
         }
 
-        if (Input.GetMouseButtonDown(0))  
-            _agentCharacterController.SetTarget(_mouseHitPosition);
+        if (Input.GetMouseButtonDown(0))
+            _agentController.SetTarget(_mouseHitPosition);
 
     }
 
