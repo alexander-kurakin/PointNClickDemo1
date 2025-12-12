@@ -11,7 +11,7 @@ public class InputExample : MonoBehaviour
 
     private void Awake()
     {
-        _agentController = new NavMeshController(_character, _character.transform.position);
+        _agentController = new NavMeshController(_character);
         _agentController.Enable();
     }
 
