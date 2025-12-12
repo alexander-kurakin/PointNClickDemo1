@@ -5,6 +5,14 @@
 .utmp/
 /[Aa]ssets/
 !/[Aa]ssets/Develop/*
+!/[Aa]ssets/Develop/Character/*
+!/[Aa]ssets/Develop/Character/Abstractions/*
+!/[Aa]ssets/Develop/Controllers/*
+!/[Aa]ssets/Develop/Extra/*
+!/[Aa]ssets/Develop/Movement/*
+!/[Aa]ssets/Develop/Movement/CharacterController/*
+!/[Aa]ssets/Develop/Movement/NavMeshAgent/*
+!/[Aa]ssets/Develop/Utils/*
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
