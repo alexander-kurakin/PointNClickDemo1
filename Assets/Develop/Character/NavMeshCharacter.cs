@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UIElements;
 
 public class NavMeshCharacter : MonoBehaviour, IDamageable
 {
@@ -11,10 +10,10 @@ public class NavMeshCharacter : MonoBehaviour, IDamageable
 
     [SerializeField] private Transform _target;
     [SerializeField] private NavMeshCharacterView _view;
-
-    private int _currentHealth;
+        
     private bool _isDead = false;
 
+    private Health _health;
     private NavMeshAgent _agent;
     private NavMeshAgentMover _mover;
     private DirectionalRotator _rotator;
@@ -30,7 +29,7 @@ public class NavMeshCharacter : MonoBehaviour, IDamageable
         _mover = new NavMeshAgentMover(_agent, _moveSpeed);
         _rotator = new DirectionalRotator(transform, _rotationSpeed);
 
-        _currentHealth = _maxHealth;
+        _health = new Health(_maxHealth);
     }
 
     private void Update()
@@ -58,11 +57,10 @@ public class NavMeshCharacter : MonoBehaviour, IDamageable
             return;
         }
 
-        _currentHealth -= damage;
+        _health.DecreaseHealth(damage);
 
-        if (_currentHealth <= 0)
+        if (_health.HealthIsDrained)
         {
-            _currentHealth = 0;
             _view.AnimateDeath();
             _isDead = true;
             return;
@@ -71,7 +69,7 @@ public class NavMeshCharacter : MonoBehaviour, IDamageable
         _view.AnimateHit();
     }
 
-    public int GetCurrentHealth() => _currentHealth;
+    public int GetCurrentHealth() => _health.CurrentHealth;
     public bool IsDead() => _isDead;
-    public bool IsInjured() => _currentHealth <= _injuryThreshold;
+    public bool IsInjured() => _health.CurrentHealth <= _injuryThreshold;
 }

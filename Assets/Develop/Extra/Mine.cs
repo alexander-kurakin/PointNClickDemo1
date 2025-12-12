@@ -32,7 +32,6 @@ public class Mine : MonoBehaviour
             TriggerMine();
     }
 
-
     private void DetonateMine()
     {
         Collider[] targets = Physics.OverlapSphere(transform.position, _explosionRadius);
