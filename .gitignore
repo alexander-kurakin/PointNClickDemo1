@@ -4,7 +4,7 @@
 #
 .utmp/
 /[Aa]ssets/
-!/[Aa]ssets/Develop/
+!/[Aa]ssets/Develop*
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
