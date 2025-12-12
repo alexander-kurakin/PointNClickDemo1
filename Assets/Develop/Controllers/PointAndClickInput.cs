@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.AI;
 
-public class InputExample : MonoBehaviour
+public class PointAndClickInput : MonoBehaviour
 {
     [SerializeField] private LayerMask _groundLayerMask;
     [SerializeField] private NavMeshCharacter _character;
