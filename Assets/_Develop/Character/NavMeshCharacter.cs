@@ -16,7 +16,7 @@ public class NavMeshCharacter : MonoBehaviour, IDamageable, INavMeshMovable, IDi
 
     private Health _health;
     private NavMeshAgent _agent;
-    private MouseInput _mouseInput;
+    private MouseRayScanner _mouseRayScanner;
     private NavMeshAgentMover _mover;
     private DirectionalRotator _rotator;
     private Vector3 _targetDestination;
@@ -38,13 +38,13 @@ public class NavMeshCharacter : MonoBehaviour, IDamageable, INavMeshMovable, IDi
 
         _health = new Health(_maxHealth);
 
-        _mouseInput = new MouseInput(_rayShootDistance, _groundLayerMask);
+        _mouseRayScanner = new MouseRayScanner(_rayShootDistance, _groundLayerMask);
     }
 
     private void Update()
     {
         _rotator.Update(Time.deltaTime);
-        _mouseInput.Update(Time.deltaTime);
+        _mouseRayScanner.Update(Time.deltaTime);
     }
 
     public void SetDestination(Vector3 position) 
@@ -83,7 +83,7 @@ public class NavMeshCharacter : MonoBehaviour, IDamageable, INavMeshMovable, IDi
     public bool IsDead() => _isDead;
     public bool IsInjured() => _health.CurrentHealth <= _injuryThreshold;
 
-    public Vector3 MouseHitPosition => _mouseInput.MouseHitPosition;
+    public Vector3 MouseHitPosition => _mouseRayScanner.MouseHitPosition;
 
     public bool CanMove => _isDead == false;
 

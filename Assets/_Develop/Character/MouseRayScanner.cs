@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class MouseInput : IMouseRayShooter
+public class MouseRayScanner : IMouseRayShooter
 {
     private Vector3 _mouseHitPosition;
     private float _rayShootDistance;
     private int _groundLayerMask;
 
-    public MouseInput(float rayShootDistance, int groundLayerMask)
+    public MouseRayScanner(float rayShootDistance, int groundLayerMask)
     {
         _rayShootDistance = rayShootDistance;
         _groundLayerMask = groundLayerMask;
