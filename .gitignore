@@ -4,9 +4,12 @@
 #
 .utmp/
 /[Aa]ssets/*
-!/[Aa]ssets/Develop.meta
-!/[Aa]ssets/Develop/
-!/[Aa]ssets/Develop/**
+!/[Aa]ssets/_Art.meta
+!/[Aa]ssets/_Art/
+!/[Aa]ssets/_Art/**
+!/[Aa]ssets/_Develop.meta
+!/[Aa]ssets/_Develop/
+!/[Aa]ssets/_Develop/**
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
