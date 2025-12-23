@@ -17,7 +17,7 @@ public class Gameplay : MonoBehaviour
 
         _playerController = new CompositeController(
             new PlayerNavMeshMovableController(_character, _mouseClickInput), 
-            new PlayerMousePointRotatableController(_character,_character));
+            new PlayerRotatableController(_character,_character));
 
         _playerController.Enable();
     }

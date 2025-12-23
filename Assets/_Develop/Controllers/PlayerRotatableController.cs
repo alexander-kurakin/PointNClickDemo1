@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class PlayerMousePointRotatableController : Controller
+public class PlayerRotatableController : Controller
 {
     private IDirectionalRotatable _rotatable;
     private INavMeshMovable _movable;
 
-    public PlayerMousePointRotatableController(IDirectionalRotatable rotatable, INavMeshMovable movable)
+    public PlayerRotatableController(IDirectionalRotatable rotatable, INavMeshMovable movable)
     {
         _rotatable = rotatable;
         _movable = movable;
