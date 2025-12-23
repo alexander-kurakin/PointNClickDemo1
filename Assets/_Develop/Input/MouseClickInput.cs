@@ -15,7 +15,7 @@ public class MouseClickInput : IMouseClickInput
 
     public bool MouseClickButtonPressed => Input.GetMouseButtonDown(0);
 
-    public Vector3 MousePositon => _mouseHitPosition;
+    public Vector3 MousePosition => _mouseHitPosition;
 
     public void ShootRay(float rayShootDistance, int groundLayerMask)
     {

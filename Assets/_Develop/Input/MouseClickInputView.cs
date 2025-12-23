@@ -14,7 +14,7 @@ public class MouseClickInputView : MonoBehaviour
         if (Application.isPlaying)
         {
             Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(_mouseClickInput.MousePositon, 0.1f);
+            Gizmos.DrawSphere(_mouseClickInput.MousePosition, 0.1f);
         }
     }
 }

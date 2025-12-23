@@ -16,7 +16,7 @@ public class PlayerNavMeshMovableController : Controller
 
     protected override void UpdateLogic(float deltaTime)
     {
-        _mouseHitPosition = _mouseClickInput.MousePositon;
+        _mouseHitPosition = _mouseClickInput.MousePosition;
 
         if (_mouseClickInput.MouseClickButtonPressed) 
             _movable.SetDestination(_mouseHitPosition);
