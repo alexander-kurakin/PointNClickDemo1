@@ -16,7 +16,7 @@ public class PlayerNavMeshMovableController : Controller
 
     protected override void UpdateLogic(float deltaTime)
     {
-        _mouseHitPosition = _movable.MouseHitPosition;
+        _mouseHitPosition = _mouseClickInput.MousePositon;
 
         if (_mouseClickInput.MouseClickButtonPressed) 
             _movable.SetDestination(_mouseHitPosition);
@@ -32,5 +32,4 @@ public class PlayerNavMeshMovableController : Controller
 
         _movable.StopMove();
     }
-
 }

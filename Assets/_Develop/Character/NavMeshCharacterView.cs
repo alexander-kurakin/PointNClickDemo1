@@ -92,13 +92,4 @@ public class NavMeshCharacterView : MonoBehaviour
     {
         _animator.SetTrigger(TakeDamageTriggerKey);
     }
-
-    private void OnDrawGizmos()
-    {
-        if (Application.isPlaying)
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(_character.MouseHitPosition, 0.1f);
-        }
-    }
 }
